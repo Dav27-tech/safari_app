@@ -18,7 +18,7 @@ class WelcomeScreen extends StatelessWidget {
               loadingBuilder: (context, child, loadingProgress) {
                 if (loadingProgress == null) return child;
                 return Container(
-                  color: const Color(0xFF006064), // Cyan-Dark fallback
+                  color: const Color(0xFF006064),
                   child: const Center(
                     child: CircularProgressIndicator(color: Colors.white),
                   ),
@@ -26,7 +26,7 @@ class WelcomeScreen extends StatelessWidget {
               },
               errorBuilder: (context, error, stackTrace) {
                 return Container(
-                  color: const Color(0xFF006064), // Cyan-Dark fallback
+                  color: const Color(0xFF006064),
                   child: const Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -34,7 +34,7 @@ class WelcomeScreen extends StatelessWidget {
                         Icon(Icons.wifi_off_rounded, color: Colors.white, size: 48),
                         SizedBox(height: 16),
                         Text(
-                          "Erreur de chargement de l'image\nVérifiez votre connexion",
+                          "Erreur de chargement de l'image\nVérifiez la connexion internet",
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.white),
                         ),
@@ -53,14 +53,14 @@ class WelcomeScreen extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.black.withOpacity(0.1),
+                    Colors.black.withOpacity(0.3),
                     Colors.black.withOpacity(0.6),
                   ],
                 ),
               ),
             ),
           ),
-          // Content
+          // Elements
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40.0),
@@ -72,7 +72,7 @@ class WelcomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Transform.rotate(
-                        angle: -0.5,
+                        angle: 0.5,
                         child: const Icon(
                           Icons.navigation_rounded,
                           color: Colors.white,
@@ -91,7 +91,7 @@ class WelcomeScreen extends StatelessWidget {
                     ],
                   ),
                   const Spacer(),
-                  // Titles
+                  // Textes pour les titres
                   Text(
                     'Voyagez\nautrement',
                     style: Theme.of(context).textTheme.displayMedium?.copyWith(
@@ -109,7 +109,7 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                   ),
                   const SizedBox(height: 40),
-                  // Get Started Button
+                  // Boutton commnecer
                   SizedBox(
                     width: double.infinity,
                     height: 64,

@@ -61,7 +61,7 @@ final List<Destination> destinations = [
     country: "Afrique du Sud",
     category: "Nature",
     imageUrl:
-    "https://images.unsplash.com/photo-1576485290814-1c72aa4bbb8b?w=1200",
+    "https://images.unsplash.com/photo-1685021403107-a2c549003297?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
     "Le Cap offre un mélange unique entre montagne, océan et paysages naturels exceptionnels.",
     price: 810,
