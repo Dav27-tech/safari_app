@@ -8,7 +8,7 @@ import '../screens/add_destination/add_destination_screen.dart';
 import '../screens/profile/profile_screen.dart';
 
 final GoRouter appRouter = GoRouter(
-  initialLocation: '/favorites',
+  initialLocation: '/',
   routes: [
     GoRoute(path: '/', builder: (context, state) => const WelcomeScreen()),
     GoRoute(path: '/home', builder: (context, state) => const HomeScreen()),
