@@ -73,13 +73,41 @@ class AppTheme {
       ),
 
       navigationBarTheme: NavigationBarThemeData(
-        backgroundColor: Colors.white,
+        height: 75,
+        elevation: 8,
+
+        backgroundColor: AppColors.lightSurface,
+
         indicatorColor: AppColors.primary.withValues(alpha: 0.15),
-        labelTextStyle: WidgetStateProperty.all(
-          const TextStyle(
-            fontWeight: FontWeight.w600,
-          ),
-        ),
+
+        iconTheme: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return const IconThemeData(
+              color: AppColors.primary,
+              size: 28,
+            );
+          }
+
+          return const IconThemeData(
+            color: Colors.grey,
+            size: 24,
+          );
+        }),
+
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return const TextStyle(
+              color: AppColors.primary,
+              fontWeight: FontWeight.bold,
+              fontSize: 13,
+            );
+          }
+
+          return const TextStyle(
+            color: Colors.grey,
+            fontSize: 12,
+          );
+        }),
       ),
     );
   }
@@ -138,8 +166,41 @@ class AppTheme {
       ),
 
       navigationBarTheme: NavigationBarThemeData(
+        height: 75,
+        elevation: 8,
+
         backgroundColor: AppColors.darkSurface,
-        indicatorColor: AppColors.primary.withValues(alpha: 0.25),
+
+        indicatorColor: AppColors.primary.withValues(alpha: 0.15),
+
+        iconTheme: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return const IconThemeData(
+              color: AppColors.primary,
+              size: 28,
+            );
+          }
+
+          return const IconThemeData(
+            color: Colors.grey,
+            size: 24,
+          );
+        }),
+
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return const TextStyle(
+              color: AppColors.primary,
+              fontWeight: FontWeight.bold,
+              fontSize: 13,
+            );
+          }
+
+          return const TextStyle(
+            color: Colors.grey,
+            fontSize: 12,
+          );
+        }),
       ),
     );
   }

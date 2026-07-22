@@ -70,7 +70,7 @@ final List<Destination> destinations = [
     bestSeason: "Automne",
     temperature: 24,
     language: "Anglais",
-    isFavorite: false,
+    isFavorite: true,
   ),
 
   Destination(
@@ -88,7 +88,7 @@ final List<Destination> destinations = [
     bestSeason: "Automne",
     temperature: 20,
     language: "Japonais",
-    isFavorite: false,
+    isFavorite: true,
   ),
 
   Destination(
@@ -106,7 +106,7 @@ final List<Destination> destinations = [
     bestSeason: "Printemps",
     temperature: 27,
     language: "Arabe",
-    isFavorite: false,
+    isFavorite: true,
   ),
 
   Destination(

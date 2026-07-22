@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../data/destinations.dart';
+import '../../widgets/app_bottom_navigation_bar.dart';
 import '../../widgets/custom_header.dart';
 import '../../widgets/search_bar.dart';
 import '../../widgets/category_chip.dart';
@@ -132,47 +133,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
 
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: 1,
-        onDestinationSelected: (index) {
-          switch (index) {
-            case 0:
-              context.go('/');
-              break;
-            case 1:
-              context.push('/home');
-              break;
-            case 2:
-              context.push('/favorites');
-              break;
-            case 3:
-              context.push('/profile');
-              break;
-          }
-        },
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.home_outlined),
-            selectedIcon: Icon(Icons.home),
-            label: "Accueil",
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.travel_explore_outlined),
-            selectedIcon: Icon(Icons.travel_explore),
-            label: "Explorer",
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.favorite_border),
-            selectedIcon: Icon(Icons.favorite),
-            label: "Favoris",
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.person_outline),
-            selectedIcon: Icon(Icons.person),
-            label: "Profil",
-          ),
-        ],
-      ),
+      bottomNavigationBar:const AppBottomNavigationBar(
+        currentIndex: 0,
+      )
     );
   }
 }

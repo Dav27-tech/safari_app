@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'controllers/theme_controller.dart';
 import 'router/app_router.dart';
 import 'themes/app_theme.dart';
 
@@ -12,12 +13,20 @@ class SafariApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      title: 'Safari',
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      routerConfig: appRouter,
+    return ValueListenableBuilder<ThemeMode>(
+      valueListenable: ThemeController.themeMode,
+      builder: (context, mode, child) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+
+          themeMode: mode,
+
+          routerConfig: appRouter,
+        );
+      },
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:safari_app/models/destination.dart';
 
 import '../screens/welcome/welcome_screen.dart';
 import '../screens/home/home_screen.dart';
@@ -14,7 +15,13 @@ final GoRouter appRouter = GoRouter(
     GoRoute(path: '/home', builder: (context, state) => const HomeScreen()),
     GoRoute(
       path: '/details',
-      builder: (context, state) => const DetailScreen(),
+      builder: (context, state) {
+        final destination = state.extra as Destination;
+
+        return DetailScreen(
+          destination: destination,
+        );
+      },
     ),
 
     GoRoute(
